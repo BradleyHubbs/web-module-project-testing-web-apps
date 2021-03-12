@@ -60,8 +60,8 @@ test('renders ONE error message if user enters a valid first name and last name 
 	const lastNameInput = screen.getByLabelText('Last Name*');
 	const submitBtn = screen.getByRole('button');
 
-	userEvent.type(firstNameInput, 'Chris');
-	userEvent.type(lastNameInput, 'Burton');
+	userEvent.type(firstNameInput, 'Brad');
+	userEvent.type(lastNameInput, 'Hubbs');
 	userEvent.click(submitBtn);
 
 	await waitFor(() => {
@@ -95,8 +95,8 @@ test('renders "lastName is a required field" if an last name is not entered and 
 	const emailInput = screen.getByLabelText('Email*');
 	const submitBtn = screen.getByRole('button');
 
-	userEvent.type(firstNameInput, 'Chris');
-	userEvent.type(emailInput, 'chris@chris.com');
+	userEvent.type(firstNameInput, 'Brad');
+	userEvent.type(emailInput, 'brad@email.com');
 
 	userEvent.click(submitBtn);
 
@@ -112,9 +112,9 @@ test('renders "lastName is a required field" if an last name is not entered and 
 test('renders all firstName, lastName and email text when submitted. Does NOT render message if message is not submitted.', async () => {
 	render(<ContactForm />);
 
-	const firstName = 'Chris';
-	const lastName = 'Burton';
-	const email = 'chris@chris.com';
+	const firstName = 'Brad';
+	const lastName = 'Hubbs';
+	const email = 'brad@email.com';
 
 	const firstNameInput = screen.getByLabelText('First Name*');
 	const lastNameInput = screen.getByLabelText('Last Name*');
@@ -144,9 +144,9 @@ test('renders all firstName, lastName and email text when submitted. Does NOT re
 test('renders all fields text when all fields are submitted.', async () => {
 	render(<ContactForm />);
 
-	const firstName = 'Chris';
-	const lastName = 'Burton';
-	const email = 'chris@chris.com';
+	const firstName = 'Brad';
+	const lastName = 'Hubbs';
+	const email = 'brad@email.com';
 
 	const firstNameInput = screen.getByLabelText('First Name*');
 	const lastNameInput = screen.getByLabelText('Last Name*');
